@@ -69,7 +69,7 @@ public class AutonomousVehicle implements Car {
         }
         //判断汽车是否将行驶到边界,注意,这里设定是停车场的长对应X轴方向,停车场的宽对应Y轴方向
         if (positionX==0||positionX==park.getLength()||positionY==0||positionY==park.getWidth()){
-            log.error("警告,汽车预计将行驶至于停车场边界,将重新生成路线");
+            log.warn("警告,汽车预计将行驶至于停车场边界,将重新生成路线");
             throw new MoveOutOfBoundsException();
         }else {
             car.setPositionX(positionX);
