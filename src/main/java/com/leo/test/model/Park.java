@@ -18,7 +18,7 @@ public class Park {
             //Initialize the parking lot. The length and width of the parking lot are not less than 3, and the length and width are 3-10 random lengths
             instance = new Park(new Random().nextInt(7)+3,new Random().nextInt(7)+3);
         }
-        log.info("初始化停车场,长宽为 " +instance.length + "*" + instance.getWidth());
+        log.info("Initialize parking lot ,The size of the parking lot is: " +instance.length + "*" + instance.getWidth());
         return instance;
     }
 

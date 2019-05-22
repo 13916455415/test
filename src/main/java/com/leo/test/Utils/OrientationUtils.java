@@ -33,13 +33,13 @@ public class OrientationUtils {
         int i = random.nextInt(2);
         //maintain current direction
         if (1==i){
-            log.info("汽车将行驶方向为 : "+currentOrientation.toString());
+            log.info("The direction of the car is : "+currentOrientation.toString());
             return currentOrientation;
         }
         //or turn clockwise once
         else {
             currentOrientation = currentOrientation.NextClockwiseOrientation();
-            log.info("汽车将行驶方向为 : "+currentOrientation.toString());
+            log.info("The direction of the car is : "+currentOrientation.toString());
             return currentOrientation;
         }
     }

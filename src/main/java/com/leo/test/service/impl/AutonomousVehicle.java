@@ -25,7 +25,7 @@ public class AutonomousVehicle implements Car {
             int positionY = random.nextInt(park.getWidth() - 1) + 1;
             //Initialize an autonomous vehicle,xy coordinate is the non-boundary random position in the parking lot, direction is east, south, west, north, one random direction
             instance = new AutonomousVehicle(positionX, positionY, currentOrientation);
-            log.info("初始化一辆自动驾驶汽车,坐标为: x=" + positionX + " , y=" + positionY + " ,汽车朝向为 : " + currentOrientation.toString());
+            log.info("Initialize an autonomous vehicle, coordinate x=" + positionX + " , y=" + positionY + " ,The direction of the car is : " + currentOrientation.toString());
         }
         return instance;
     }
