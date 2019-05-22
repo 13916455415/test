@@ -15,7 +15,7 @@ test
 
 ### Runtime Environment  
 
-jdk 1.8  
+jdk 1.8 + maven    
 
 ### Running Steps  
 
