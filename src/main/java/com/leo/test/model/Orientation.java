@@ -14,6 +14,8 @@ public enum Orientation implements NextClockwiseOrientation {
     }
     @Override
     public Orientation NextClockwiseOrientation() {
-        return Orientation.values()[nextClockwiseOrientation];
+            Orientation[] orientations = Orientation.values();
+            Orientation orientation = orientations[nextClockwiseOrientation];
+        return orientation;
     }
 }

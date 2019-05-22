@@ -7,11 +7,29 @@ import com.leo.test.model.Park;
 import com.leo.test.service.Car;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Random;
+
 @Slf4j
 public class AutonomousVehicle implements Car {
     private int positionX;
     private int positionY;
     private Orientation orientation;
+    public static AutonomousVehicle instance;
+    public static Park park = Park.getInstance();
+
+    public static synchronized AutonomousVehicle getInstance(){
+        if (null==instance){
+            Random random = new Random();
+            Orientation currentOrientation = OrientationUtils.getRandomOrientation();
+            int positionX = random.nextInt(park.getLength() - 1) + 1;
+            int positionY = random.nextInt(park.getWidth() - 1) + 1;
+            //初始化一辆自动驾驶汽车,xy坐标是在停车场内非边界随机位置,方向是东南西北随机一个方向
+            instance = new AutonomousVehicle(positionX, positionY, currentOrientation);
+            log.info("初始化一辆自动驾驶汽车,坐标为: x=" + positionX + " , y=" + positionY + " ,汽车朝向为 : " + currentOrientation.toString());
+        }
+        return instance;
+    }
+
 
     public AutonomousVehicle(int positionX, int positionY, Orientation orientation) {
         this.positionX = positionX;
@@ -69,7 +87,7 @@ public class AutonomousVehicle implements Car {
         }
         //判断汽车是否将行驶到边界,注意,这里设定是停车场的长对应X轴方向,停车场的宽对应Y轴方向
         if (positionX==0||positionX==park.getLength()||positionY==0||positionY==park.getWidth()){
-            log.warn("警告,汽车预计将行驶至于停车场边界,将重新生成路线");
+            car.setOrientation(orientation);
             throw new MoveOutOfBoundsException();
         }else {
             car.setPositionX(positionX);

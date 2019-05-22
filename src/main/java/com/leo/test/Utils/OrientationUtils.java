@@ -29,8 +29,9 @@ public class OrientationUtils {
         }
         //或者顺时针转向一次
         else {
-            log.info("汽车将行驶方向为 : "+currentOrientation.NextClockwiseOrientation().toString());
-            return currentOrientation.NextClockwiseOrientation();
+            currentOrientation = currentOrientation.NextClockwiseOrientation();
+            log.info("汽车将行驶方向为 : "+currentOrientation.toString());
+            return currentOrientation;
         }
     }
 
