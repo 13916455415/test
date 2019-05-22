@@ -19,4 +19,4 @@ jdk 1.8
 
 ### Running Steps  
 
-Run the test method in com.leo. Test.test  
+Run the test method in package com.leo.test.Test  
