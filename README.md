@@ -1,14 +1,22 @@
 test
 ===========================
 
-### 项目说明
-1.项目运行后会初始化停车场,停车场长宽不小于3,长宽都是3-10随机长度(停车场长宽不宜小于3)  
-2.初始化停车场后会初始化一辆自动驾驶汽车,xy坐标是在停车场内非边界随机位置,方向是东南西北随机一个方向  
-3.汽车默认每次行驶一个单位,每次随机决定是转向还是维持当前方向,如果转向,则转向方向为当前车身方向的逆时针转向,比如当前车身方向为东,则如果转向则转向后车身方向为南  
-4.汽车转向后行驶,会判断是否将到达停车场边界,如果将到达停车场边界,则抛出MoveOutOfBoundsException并重新计算行驶路线,直到判断出不会行驶到停车场边界  
-5.汽车行驶四小时后,会休眠半小时
-### Runtime Environment
-jdk 1.8
-### Running Steps
+###  Project Description  
 
-运行 com.leo.test.Test中主方法即可
+1. After the operation of the project, the parking lot will be initialized. The length and width of the parking lot shall not be less than 3, and the length and width shall be 3-10 random lengths (the length and width of the parking lot shall not be less than 3).  
+
+2. After initializing the parking lot, an autonomous vehicle will be initialized. The xy coordinate is a non-boundary random position in the parking lot, and the direction is a random direction of southeast and northwest.  
+
+3. The car runs one unit at a time by default. Each time, it randomly decides whether to turn or maintain the current direction.  
+
+4. When the car turns and runs, it will determine whether it will reach the boundary of the parking lot. If it will reach the boundary of the parking lot, it will throw MoveOutOfBoundsException and calculate the driving route again until it is determined that it will not reach the boundary of the parking lot.  
+
+After four hours of driving, the car will sleep for half an hour
+
+### Runtime Environment  
+
+jdk 1.8  
+
+### Running Steps  
+
+Run the test method in com.leo. Test.test  
