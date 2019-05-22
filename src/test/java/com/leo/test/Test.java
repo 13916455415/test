@@ -9,6 +9,21 @@ import java.time.LocalDateTime;
 
 @Slf4j
 public class Test {
+    /**
+     * After the test starts, the parking lot will be initialized. The length and width of the parking lot shall not be less than 3,
+     * and the length and width shall be 3-10 random lengths (the length and width of the parking lot shall not be less than 3).
+     *
+     * After initializing the parking lot, an autonomous vehicle will be initialized,xy coordinate is the non-boundary random position in the parking lot,
+     * and the direction is east, south, west and north, one direction at random
+     *
+     * The car runs one unit at a time by default. Each time, it randomly decides whether to turn or maintain the current direction.
+     *
+     * When the car turns and runs, it will determine whether it will reach the boundary of the parking lot. If it will reach the boundary of the parking lot,
+     * it will throw MoveOutOfBoundsException and calculate the driving route again until it is determined that it will not reach the boundary of the parking lot.
+     *
+     * After four hours of driving, the car will sleep for half an hour
+     * @throws InterruptedException
+     */
     @org.junit.Test
     public  void test() throws InterruptedException {
         //initialize an autonomous vehicle
