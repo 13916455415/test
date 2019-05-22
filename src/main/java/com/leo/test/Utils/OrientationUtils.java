@@ -7,7 +7,11 @@ import java.util.Random;
 @Slf4j
 public class OrientationUtils {
     static Random random = new Random();
-    //获取随机东南西北方向
+
+    /**
+     *Get random east, south, west, north, and south directions
+     * @return
+     */
     public static Orientation getRandomOrientation(){
         try {
             Orientation[] orientations = Orientation.values();
@@ -19,15 +23,20 @@ public class OrientationUtils {
         }
             return null;
     }
-    //随机获取顺时针转向或者维持当前方向
+
+    /**
+     * Randomly acquire clockwise turn or maintain current direction
+     * @param currentOrientation
+     * @return
+     */
     public static Orientation getRandomClockwiseOrientation(Orientation currentOrientation){
         int i = random.nextInt(2);
-        //维持当前方向
+        //maintain current direction
         if (1==i){
             log.info("汽车将行驶方向为 : "+currentOrientation.toString());
             return currentOrientation;
         }
-        //或者顺时针转向一次
+        //or turn clockwise once
         else {
             currentOrientation = currentOrientation.NextClockwiseOrientation();
             log.info("汽车将行驶方向为 : "+currentOrientation.toString());

@@ -15,7 +15,7 @@ public class Park {
 
     public static synchronized Park getInstance(){
         if (null==instance){
-            //初始化停车场,停车场长宽不小于3,长宽都是3-10随机长度
+            //Initialize the parking lot. The length and width of the parking lot are not less than 3, and the length and width are 3-10 random lengths
             instance = new Park(new Random().nextInt(7)+3,new Random().nextInt(7)+3);
         }
         log.info("初始化停车场,长宽为 " +instance.length + "*" + instance.getWidth());
