@@ -1,5 +1,19 @@
 package com.leo.test.model;
 
-public enum Orientation {
-    EAST,WEST,SOUTH,NORTH
+import com.leo.test.service.NextClockwiseOrientation;
+
+public enum Orientation implements NextClockwiseOrientation {
+    EAST(1),
+    SOUTH(2),
+    WEST(3),
+    NORTH(0);
+    private final int nextClockwiseOrientation;
+
+     Orientation(final int nextClockwiseOrientation) {
+        this.nextClockwiseOrientation = nextClockwiseOrientation;
+    }
+    @Override
+    public Orientation NextClockwiseOrientation() {
+        return Orientation.values()[nextClockwiseOrientation];
+    }
 }
